@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0".>
+    <title>SPORTS SHOP</title>
+    <link rel="stylesheet" href="task.css">
+    <div class="heading">
+       <h1><center><font color="yellow">SPORTS SHOP</center></h1><div class="credinitials">
+        <a href="login.html" target="blank" id="get">login</a><a>               </a><a>               </a><a>               </a>
+        <a href="signup.html" target="blank" id="het">signup</a></div>  <div class="icon-cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+            </svg>
+            <span id="cart-count">0</span>
+        </div></div>  
+        <div class="games"><a href="cricket.html" target="blank">Cricket Shop</a><a href="hockey.html" target="blank">Hockey Shop</a><a href="football.html" target="blank">FootBall Shop</a><a href="baseball.html" target="blank">Baseball Shop</a></div>
+</head>
+<body>
+    <link rel="stylesheet" href="task.css">
+        <h2 align="center">BEST DEALS OF THE DAY:</h2>
+        <div class="sport">
+        <div class="listProduct"><div class="item"><img src="football2.jpeg" alt="football image" height="300" width="400">
+            <h1>FOOTBALL</h1><h2>Company: Laxonomy</h2><h2>COST: $200</h2>
+            <div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+                <button class="cart" onclick="removefromCart()">-</button>            </div></div>
+        </div>
+        <div class="item1"><img src="CRICKETBAT.png" alt="CRICKETBAT image" height="300" width="225">
+            <h1>CRICKET BAT</h1><h2>Company: Striver</h2><h2>COST: $250</h2>
+            <div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+                <button class="cart" onclick="removefromCart()">-</button>
+            </div></div>
+            <div class="item2"><img src="HOCKEYBAT.jpeg" alt="HOCKEYBAT image" height="300" width="225">
+                <h1>HOCKEY BAT</h1><h2>Company: rotteler</h2><h2>COST: $100</h2>
+                <div class="btn">
+                    <button class="cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="cart" onclick="removefromCart()">-</button>
+                </div></div><div class="item3"><img src="WICKETS.jpeg" alt="WICKETS image" height="300" width="225">
+                    <h1>WICKETS</h1><h2>Company: warcon</h2><h2>COST: $150</h2>
+                    <div class="btn">
+                        <button class="cart" onclick="addToCart()">Add to Cart</button>
+                        <button class="cart" onclick="removefromCart()">-</button>
+                        </div>
+                    </div></div>
+        </div>
+    </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <div class="item"><h2>ITEM</h2></div>
+        </div>
+        <script>
+            let cartCount = localStorage.getItem('cartCount') || 0;
+            updateCartCount();
+            function incrementCartCount() {
+                cartCount++;
+                updateCartCount();
+                saveCartCountToLocalStorage();
+            }
+            function updateCartCount() {
+                document.getElementById('cart-count').textContent = cartCount;
+            }
+            function saveCartCountToLocalStorage() {
+                localStorage.setItem('cartCount', cartCount);
+            }
+            function addToCart() {
+                incrementCartCount();
+                console.log(cartCount);
+               
+            }
+            function removefromCart() {
+                decrementCartCount();
+                console.log(cartCount);}
+                function decrementCartCount() {
+                cartCount--;
+                updateCartCount();
+                saveCartCountToLocalStorage();
+            }
+        </script>
+   </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4_sPpbrFoBJmNnw3lkaTv4paolTmdMbenUEOiUqwi9YqAQD7Z03sllFwk4w&s");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #666;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.browse{
+    display: flex;
+    margin-left: 400px;
+  
+}
+.search-bar{
+    margin-top: 23px;
+    margin-left: 20px;
+}
+h3{
+    color: orangered;
+}

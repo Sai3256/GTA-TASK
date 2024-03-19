@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Shop</title>
+    <link rel="stylesheet" href="cricket.css">
+    <div class="heading"><link rel="stylesheet" href="task.css">
+        <div></div> <h1><center><font color="green">SPORTS SHOP</center></h1></h1><div class="credinitials">
+         <a href="login.html" target="blank" id="get">login</a><a>               </a><a>               </a><a>               </a>
+         <a href="signup.html" target="blank" id="het">signup</a></div>  <div class="icon-cart">
+             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+             </svg>
+             <span id="cart-count">0</span>
+         </div></div>  
+         
+</head>
+<body>
+<link rel="stylesheet" href="cricket.css">
+    <font color="black">  <h1 align="center">Cricket Emporium</h1></font>
+        
+   
+    
+        <div class="browse">
+            <h2 align="center">Browse Our Products:</h2><div class="search">
+                <input type="text" id="search" placeholder="Search...">
+                <button onclick="searchProducts()">Search</button></div>
+            </div>
+        
+
+    <section class="products">
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO737hUe_g28vuL2n4pWXqPwSKjw2cvuMnWw&usqp=CAU" alt="Cricket kit">
+           <big>  <h3>Cricket kit</h3></big></font>
+                <font color="yellow">  <p>Company: EEZEPAK <br><br>Original Prize: $650<br><br>Discount: 15%<br><br>Final Prize: $552</p></font><div class="btn">
+                    <button class="cart" onclick="addToCart()">Add to Cart</button>
+            <button class="cart" onclick="removefromCart()">-</button>
+                    
+                </div>
+            
+        </div>
+   
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsevXzIA2-VaQK_g0V9MeLTQBZVRVxUO35bw&usqp=CAU" alt="Cricket Bat">
+           <big>  <h3>Cricket Bat</h3></big>
+                <font color="yellow">  <p>Company: SS <br><br>Original Prize: $100<br><br>Discount: 5%<br><br>Final Prize: $95</p></font><div class="btn">
+                    <button class="cart" onclick="addToCart()">Add to Cart</button>
+            <button class="cart" onclick="removefromCart()">-</button>
+                    
+                </div>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAj9fIrjKRnXgQAntrEjw1rUWaAJWY6ScpaQ&usqp=CAU" alt="Cricket Ball">
+          <big>  <h3>Cricket Ball</h3></big>
+            <font color="yellow">   <p>Company: League Special <br><br>Original Prize: $10<br><br>Discount: 5%<br><br>Final Prize: $9.5</p></font><div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+            <button class="cart" onclick="removefromCart()">-</button>
+            </div>
+            
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSQk5yY71-D9JSqRzvvUi3lTOdMbC5RQ2DYg&usqp=CAU" alt="Cricket Wicket">
+           
+            </p> <big>  <h3>Stumps</h3></big>
+            <font color="yellow">   <p>Company: Forque <br><br>Original Prize: $20<br><br>Discount: 10%<br><br>Final Prize: $18</p></font><div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+            <button class="cart" onclick="removefromCart()">-</button>
+                
+            </div>
+        </div>
+        
+    </section>
+
+
+      <center> <big> <p>&copy; 2024 Cricket Emporium. All rights reserved.</big></p></center>
+      <script>
+        // Initialize cart count from local storage or default to 0
+        let cartCount = localStorage.getItem('cartCount') || 0;
+        updateCartCount();
+    
+        // Function to increment the cart count and update the UI
+        function incrementCartCount() {
+            cartCount++;
+            updateCartCount();
+            saveCartCountToLocalStorage();
+        }
+    
+        // Function to update the cart count in the UI
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+    
+        // Function to save cart count to local storage
+        function saveCartCountToLocalStorage() {
+            localStorage.setItem('cartCount', cartCount);
+        }
+    
+        // Function to add product to cart
+        function addToCart() {
+            incrementCartCount();
+            console.log(cartCount);
+            // Increment cart count
+            // Additional logic for adding product to cart (if required)
+        }
+        function removefromCart() {
+            decrementCartCount();
+            console.log(cartCount);}
+    
+            function decrementCartCount() {
+            cartCount--;
+            updateCartCount();
+            saveCartCountToLocalStorage();
+        }
+    </script>
+      
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hockey Shop</title>
+    <link rel="stylesheet" href="hockey.css">
+    <div class="heading"><link rel="stylesheet" href="task.css">
+        <div></div> <h1><center><font color="green">SPORTS SHOP</center></h1></h1><div class="credinitials">
+         <a href="login.html" target="blank" id="get">login</a><a>               </a><a>               </a><a>               </a>
+         <a href="signup.html" target="blank" id="het">signup</a></div>  <div class="icon-cart">
+             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+             </svg>
+             <span id="cart-count">0</span>
+         </div></div>  
+         
+</head>
+<body> 
+    <link rel="stylesheet" href="hockey.css">
+     <font color="green"><h1 align="center">Hockey Hazzle</h1></font>
+    
+    <div class="header-content">
+        <div class="browse">
+            <h2 align="center"><font color="yellow">Search Your Hockey Merchandise:</font></h2>
+        
+        <div class="search-bar">
+           <input type="text" id="search" placeholder="Search..."></big>
+            <button onclick="searchProducts()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+   
+        <div class="product">
+           <img src="HOCKEYBAT1.jpeg.png" alt="hockeyballimage" height="400px" width="400px"><div class="btn">
+            <button class="cart" onclick="addToCart()">Add to Cart</button>
+            <button class="cart" onclick="removefromCart()">-</button>
+        </div>
+        </div>
+        <div class="product">
+            <img src="hockeyball.png" alt="hockeybatimage" height="400px" width="400px"><div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+                <button class="cart" onclick="removefromCart()">-</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="hockeyjersy.png"  alt="hockeybagimage" height="400px" width="260px"><div class="btn">
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+                <button class="cart" onclick="removefromCart()">-</button>
+            </div>
+            
+        </div>
+       
+    </div>
+
+   
+        <font color="red">  <center><big></big> <big><p>&copy; 2024 Hockey Hazzle. All rights reserved.</p></big></big></font></center>
+
+<script>
+    // Initialize cart count from local storage or default to 0
+    let cartCount = localStorage.getItem('cartCount') || 0;
+    updateCartCount();
+
+    // Function to increment the cart count and update the UI
+    function incrementCartCount() {
+        cartCount++;
+        updateCartCount();
+        saveCartCountToLocalStorage();
+    }
+
+    // Function to update the cart count in the UI
+    function updateCartCount() {
+        document.getElementById('cart-count').textContent = cartCount;
+    }
+
+    // Function to save cart count to local storage
+    function saveCartCountToLocalStorage() {
+        localStorage.setItem('cartCount', cartCount);
+    }
+
+    // Function to add product to cart
+    function addToCart() {
+        incrementCartCount();
+        console.log(cartCount);
+        // Increment cart count
+        // Additional logic for adding product to cart (if required)
+    }
+    function removefromCart() {
+        decrementCartCount();
+        console.log(cartCount);}
+
+        function decrementCartCount() {
+        cartCount--;
+        updateCartCount();
+        saveCartCountToLocalStorage();
+    }
+</script>
+  
+
+    
+</body>
+</html>
