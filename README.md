@@ -32,6 +32,6 @@ This project is a **sports shop website** built using **HTML, CSS, and JavaScrip
 ## Contributors
 Feel free to contribute and improve the functionality! 
 
----
 
-This README now reflects the **"Add to Cart"** feature! Let me know if you’d like any further modifications. 🚀
+
+
