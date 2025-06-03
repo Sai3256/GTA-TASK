@@ -68,17 +68,14 @@
             function addToCart() {
                 incrementCartCount();
                 console.log(cartCount);
-               document.getElementById("addToCartBtn").addEventListener("click", function() {
-    const message = document.getElementById("message");
+              const message = document.getElementById("cart-message");
     message.textContent = "Added to cart successfully";
     message.style.display = "block";
 
-   
+  
     setTimeout(() => {
         message.style.display = "none";
-    }, 3000);
-});
-
+    }, 5000);
             }
             
             function removefromCart() {
