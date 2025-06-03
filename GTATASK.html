@@ -46,47 +46,56 @@
                     </div></div>
         </div>
     </div>
+    <p id="cart-message" style="display: none; color: green; text-align: center;"></p>
+
     <div class="cartTab">
         <h1>Shopping Cart</h1>
         <div class="listCart">
             <div class="item"><h2>ITEM</h2></div>
         </div>
-        <script>
-            let cartCount = localStorage.getItem('cartCount') || 0;
-            updateCartCount();
-            function incrementCartCount() {
-                cartCount++;
-                updateCartCount();
-                saveCartCountToLocalStorage();
-            }
-            function updateCartCount() {
-                document.getElementById('cart-count').textContent = cartCount;
-            }
-            function saveCartCountToLocalStorage() {
-                localStorage.setItem('cartCount', cartCount);
-            }
-            function addToCart() {
-                incrementCartCount();
-                console.log(cartCount);
-              const message = document.getElementById("cart-message");
-    message.textContent = "Added to cart successfully";
-    message.style.display = "block";
+      <script>
+    let cartCount = localStorage.getItem('cartCount') || 0;
+    updateCartCount();
 
-  
-    setTimeout(() => {
-        message.style.display = "none";
-    }, 5000);
-            }
-            
-            function removefromCart() {
-                decrementCartCount();
-                console.log(cartCount);}
-                function decrementCartCount() {
-                cartCount--;
-                updateCartCount();
-                saveCartCountToLocalStorage();
-            }
-        </script>
+    function incrementCartCount() {
+        cartCount++;
+        updateCartCount();
+        saveCartCountToLocalStorage();
+    }
+
+    function updateCartCount() {
+        document.getElementById('cart-count').textContent = cartCount;
+    }
+
+    function saveCartCountToLocalStorage() {
+        localStorage.setItem('cartCount', cartCount);
+    }
+
+    function addToCart() {
+        incrementCartCount();
+        console.log(cartCount);
+
+        const message = document.getElementById("cart-message");
+        message.textContent = "Added to cart successfully";
+        message.style.display = "block";
+
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 3000);
+    }
+
+    function removefromCart() {
+        decrementCartCount();
+        console.log(cartCount);
+    }
+
+    function decrementCartCount() {
+        cartCount--;
+        updateCartCount();
+        saveCartCountToLocalStorage();
+    }
+</script>
+
    </div>
 </body>
 </html>
