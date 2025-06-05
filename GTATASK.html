@@ -71,19 +71,21 @@
         localStorage.setItem('cartCount', cartCount);
     }
 
-    function addToCart() {
-        incrementCartCount();
-        console.log(cartCount);
+  function addToCart() {
+    incrementCartCount();
+    console.log(cartCount);
 
-        const message = document.getElementById("cart-message");
-        message.textContent = "Added to cart successfully";
-        message.style.display = "block";
 
-        setTimeout(() => {
-            message.style.display = "none";
-        }, 3000);
-    }
+    alert("Added to cart successfully");
 
+    const message = document.getElementById("cart-message");
+    message.textContent = "Added to cart successfully";
+    message.style.display = "block";
+
+    setTimeout(() => {
+        message.style.display = "none";
+    }, 3000);
+}
     function removefromCart() {
         decrementCartCount();
         console.log(cartCount);
