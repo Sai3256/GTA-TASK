@@ -61,7 +61,21 @@
       <script>
     let cartCount = localStorage.getItem('cartCount') || 0;
     updateCartCount();
+function searchItems() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let items = document.querySelectorAll('.item, .item1, .item2, .item3');
 
+    items.forEach(item => {
+        let text = item.textContent.toLowerCase();
+        if (text.includes(input)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+          
     function incrementCartCount() {
         cartCount++;
         updateCartCount();
