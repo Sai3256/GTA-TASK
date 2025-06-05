@@ -56,7 +56,18 @@
     color: yellow;
     text-decoration: none;
    }
-    
+      .password-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     
 </style>
 <body>
@@ -69,14 +80,27 @@
                 <input type="text" name="username"  placeholder="Enter your email address" class="inputstyle">
         </label>
        </div>
-
-       <div>
-        <label class="creditinals">Password:<br/>
-                <input type= "password" name="password" placeholder="enter your password" class="inputstyle">
-        </label>
-       </div>
+         <div class="password-container">
+             <label class="creditinals">Password:<br>
+        <input type="password" id="password" placeholder="Enter password">
+        <span class="toggle-icon" onclick="togglePassword()">👁️</span></label>
+    </div>
+    
     </div>
     <button class="buttonstyle"><a href="GTATASK.html">Login</a></button>
     </div>
+        <script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
+
+   
+
