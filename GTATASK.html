@@ -58,24 +58,24 @@
         <div class="listCart">
             <div class="item"><h2>ITEM</h2></div>
         </div>
-      <script>
-    let cartCount = localStorage.getItem('cartCount') || 0;
+<script>
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
     updateCartCount();
-function searchItems() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let items = document.querySelectorAll('.item, .item1, .item2, .item3');
 
-    items.forEach(item => {
-        let text = item.textContent.toLowerCase();
-        if (text.includes(input)) {
-            item.style.display = '';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-}
+    function searchItems() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let items = document.querySelectorAll('.item, .item1, .item2, .item3');
 
-          
+        items.forEach(item => {
+            let text = item.textContent.toLowerCase();
+            if (text.includes(input)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
     function incrementCartCount() {
         cartCount++;
         updateCartCount();
@@ -90,25 +90,29 @@ function searchItems() {
         localStorage.setItem('cartCount', cartCount);
     }
 
-  function addToCart() {
-    incrementCartCount();
-    console.log(cartCount);
-
-
-    alert("Added to cart successfully");}
+    function addToCart() {
+        incrementCartCount();
+        console.log(cartCount);
+        alert("Added to cart successfully");
+    }
 
     function removefromCart() {
         decrementCartCount();
         console.log(cartCount);
-        alert("Removed from cart!");
     }
-      
+
     function decrementCartCount() {
-        cartCount--;
-        updateCartCount();
-        saveCartCountToLocalStorage();
+        if (cartCount > 0) {
+            cartCount--;
+            updateCartCount();
+            saveCartCountToLocalStorage();
+            alert("Removed from cart!");
+        } else {
+            alert("Cart is Empty!");
+        }
     }
 </script>
+
 
    </div>
 </body>
