@@ -105,9 +105,14 @@
                 console.log(cartCount);
                   alert("Removed from cart!");}
                 function decrementCartCount() {
-                cartCount--;
-                updateCartCount();
-                saveCartCountToLocalStorage();
+                 if (cartCount > 0) {
+            cartCount--;
+            updateCartCount();
+            saveCartCountToLocalStorage();
+            alert("Removed from cart!");
+        } else {
+            alert("Cart is Empty!");
+        }
             }
         </script>
           
