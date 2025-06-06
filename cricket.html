@@ -110,9 +110,15 @@
          alert("Removed from cart!");}
              
             function decrementCartCount() {
+           if (cartCount > 0) {
             cartCount--;
             updateCartCount();
             saveCartCountToLocalStorage();
+            alert("Removed from cart!");
+        } else {
+            alert("Cart is Empty!");
+        }
+           
         }
     </script>
       
