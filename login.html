@@ -101,11 +101,14 @@
         </div>
       </div>
 
-      <button class="login-button" type="submit">Login</button>
+      <button class="login-button" type="submit" onclick="LoginButton">Login</button>
     </form>
   </div>
 
   <script>
+    function LoginButton(){
+    alert("Login Successful");
+    }
     function togglePassword() {
       const pass = document.getElementById("password");
       pass.type = pass.type === "password" ? "text" : "password";
