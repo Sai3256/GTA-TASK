@@ -99,15 +99,16 @@
                 // Additional logic for adding product to cart (if required)
                 alert("Added to cart successfully");
             }
-            function removefromCart() {
-                decrementCartCount();
-                console.log(cartCount);
-                 alert("Removed from cart!");}
-                function decrementCartCount() {
+            function decrementCartCount() {
                 cartCount--;
                 updateCartCount();
                 saveCartCountToLocalStorage();
             }
+            function removefromCart() {
+                decrementCartCount();
+                console.log(cartCount);
+                 alert("Removed from cart!");}
+                
         </script>
           
 
