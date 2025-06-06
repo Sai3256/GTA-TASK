@@ -1,106 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
-<style>
-    body{
-        background-image: url("ellite sports logo.png");
-        background-repeat: no-repeat;
-      background-position: top;
-      background-size: 500px;
-      height: 100vh;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
       display: flex;
-      align-items: center;
-      flex-direction: column;
       justify-content: center;
-        align-items: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("ellite sports logo.png");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 400px;
     }
-     .form-login{
-        width: 480px;
-        background-color: rgba(73, 73, 111, 0.175);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding:10px;
-        margin-top: 165px;
-     }
-     .creditinals{
-        font-size: 20px;
-        font-weight: bold;
-        color:blue
-     }
-     .block-creditinals{
-        margin-bottom: 15px;
-        margin-top: 10px;
-     }
-    .inputstyle{
-        height: 30px;
-        width:300px;
-    }
-    .buttonstyle{
-         height:40px;
-         width:80px;
-         font-size: 15px;
-         background-color: rgb(29, 29, 118);
-         font-weight: bold;
-         color:white;
-         margin-top: 50px;
-         padding: 10px;
-         margin-bottom: 50px;
-    }
-   a{
-    color: yellow;
-    text-decoration: none;
-   }
-      .password-container {
-            position: relative;
-            display: inline-block;
-        }
 
-        .toggle-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-    
-</style>
+    .login-container {
+      margin-top: 220px;
+      width: 400px;
+      background-color: #9797e0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: blue;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      box-sizing: border-box;
+      border: 1px solid #640909;
+      border-radius: 5px;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      padding-right: 35px;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: yellow;
+      background-color: #1d1d76;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: #14145a;
+    }
+  </style>
+</head>
 <body>
-   
-    <div class="form-login">
-        
-    <div>
-       <div class="block-creditinals">
-        <label class="creditinals">Email:<br/>
-                <input type="text" name="username"  placeholder="Enter your email address" class="inputstyle">
-        </label>
-       </div>
-         <div class="password-container">
-             <label class="creditinals">Password:<br>
-        <input type="password" id="password" placeholder="Enter password">
-        <span class="toggle-icon" onclick="togglePassword()">👁️</span></label>
-    </div>
-    
-    </div>
-    <button class="buttonstyle"><a href="GTATASK.html">Login</a></button>
-    </div>
-        <script>
-        function togglePassword() {
-            const passwordField = document.getElementById("password");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-            } else {
-                passwordField.type = "password";
-            }
-        }
-    </script>
+
+  <div class="login-container">
+    <form>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Enter your email address">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Enter password">
+          <span class="toggle-icon" onclick="togglePassword()">👁️</span>
+        </div>
+      </div>
+
+      <button class="login-button" type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const pass = document.getElementById("password");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+  </script>
+
 </body>
 </html>
-
-   
-
