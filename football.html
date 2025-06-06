@@ -100,9 +100,14 @@
                 alert("Added to cart successfully");
             }
             function decrementCartCount() {
-                cartCount--;
-                updateCartCount();
-                saveCartCountToLocalStorage();
+               if (cartCount > 0) {
+            cartCount--;
+            updateCartCount();
+            saveCartCountToLocalStorage();
+            alert("Removed from cart!");
+        } else {
+            alert("Cart is Empty!");
+        }
             }
             function removefromCart() {
                 decrementCartCount();
