@@ -3,31 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Page</title>
+  <title>Elite Sports Login</title>
+  <link rel="icon" type="image/png" href="login_favicon.png">
+
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url("loginbackground.jpeg");
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f0f0f0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-image: url("ellite sports logo.png");
-      background-repeat: no-repeat;
-      background-position: top;
-      background-size: 400px;
+    }
+
+    .container {
+      background-color: #fff;
+      width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-container {
+      background-color: #000;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .logo-container img {
+      width: 100%;
+      max-width: 220px;
     }
 
     .login-container {
-      margin-top: 220px;
-      width: 400px;
-      background-color: #9797e0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
       padding: 30px;
-      box-sizing: border-box;
+      background-color: #9797e0;
     }
 
     .form-group {
@@ -35,36 +52,39 @@
     }
 
     label {
-      display: block;
       font-weight: bold;
-      color: blue;
-      margin-bottom: 5px;
+      color: #1d1d76;
+      display: block;
+      margin-bottom: 6px;
     }
 
     input[type="text"], input[type="password"] {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       font-size: 15px;
-      box-sizing: border-box;
-      border: 1px solid #640909;
-      border-radius: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      outline: none;
+      border-color: #1d1d76;
+      box-shadow: 0 0 5px rgba(29, 29, 118, 0.3);
     }
 
     .password-wrapper {
       position: relative;
     }
 
-    .password-wrapper input {
-      padding-right: 35px;
-    }
-
     .toggle-icon {
       position: absolute;
       top: 50%;
-      right: 10px;
+      right: 12px;
       transform: translateY(-50%);
       cursor: pointer;
       font-size: 18px;
+      user-select: none;
     }
 
     .login-button {
@@ -77,6 +97,7 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     .login-button:hover {
@@ -84,34 +105,51 @@
     }
   </style>
 </head>
+
 <body>
 
-  <div class="login-container">
-    <form>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="text" id="email" placeholder="Enter your email address">
-      </div>
+  <div class="container">
+    <div class="logo-container">
+      <img src="ellite sports logo.png" alt="Elite Sports Logo">
+    </div>
 
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <div class="password-wrapper">
-          <input type="password" id="password" placeholder="Enter password">
-          <span class="toggle-icon" onclick="togglePassword()">👁️</span>
+    <div class="login-container">
+      <form onsubmit="return LoginButton()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" id="email" placeholder="Enter your email address" required>
         </div>
-      </div>
 
-      <button class="login-button" type="submit" onclick="LoginButton">Login</button>
-    </form>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Enter password" required>
+            <span class="toggle-icon" onclick="togglePassword()">👁️</span>
+          </div>
+        </div>
+
+      <a href="GTATASK.html"> <button class="login-button" type="submit">Login</button></a>
+      </form>
+    </div>
   </div>
 
   <script>
-    function LoginButton(){
-    alert("Login Successful");
-    }
     function togglePassword() {
       const pass = document.getElementById("password");
       pass.type = pass.type === "password" ? "text" : "password";
+    }
+
+    function LoginButton() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      if (email && pass) {
+        alert("Login Successful!");
+        return false; // prevent form from actually submitting
+      } else {
+        alert("Please fill in both fields.");
+        return false;
+      }
     }
   </script>
 
