@@ -54,11 +54,134 @@
     </div>
     <p id="cart-message" style="display: none; color: green; text-align: center;"></p>
 
+    <div class="why-choose-us">
+  <div class="why-text">
+    <h2>Why Should You Choose Sports Arena?</h2>
+    <p>
+      At Sports Arena, we offer a one-stop solution for all your sporting needs. Whether you're a beginner or a professional athlete, we ensure premium quality gear at affordable prices. Our extensive range, customer-friendly return policies, and dedicated support make us a trusted choice across the country.
+      <br><br>
+      Choose Sports Arena for excellence, reliability, and the spirit of sportsmanship!
+    
+    
+    <strong>Wide Product Range:</strong> From cricket bats and footballs to gym gear and accessories — everything under one roof.<br>
+    <strong>Top Brands:</strong> We partner with the best sports brands to ensure quality and durability in every product.<br>
+    <strong>Affordable Pricing:</strong> We believe quality sports gear should be accessible to everyone — hence our fair pricing strategy.
+    <strong>Customer Satisfaction:</strong> Our dedicated support team ensures that every query is resolved quickly and every order is fulfilled with care.<br>
+    <strong>Fast & Safe Delivery:</strong> Get your gear delivered at your doorstep quickly with our reliable logistics network.</br>
+    <strong>Secure Payments:</strong> We use trusted payment gateways to ensure all transactions are completely safe.</br>
+    </p>
+  </div>
+  <div class="why-image">
+    <img src="whychoose.jpeg" alt="Why Choose Sports Arena" height="300px" width="400px">
+  </div>
+</div>
+
+    <div class="about-section">
+    <img src="website_elite.jpg" alt="Sports Shop">
+    
+    <div class="about-text">
+      <h2>Welcome to ProSports Arena</h2>
+      <p>
+        At ProSports Arena, we bring the world of sports closer to you. Whether you're a professional athlete, fitness enthusiast, or just love the game — we have everything you need. From cricket bats and footballs to athletic wear and training gear, our store offers premium quality products from top brands at unbeatable prices. <br><br>
+        Our mission is to inspire and support every sportsperson with reliable equipment and excellent service. Explore our collection and gear up for greatness!
+      </p>
+    </div>
+  </div>
+  <div class="rating-section">
+  <h2>Rate Your Experience with ProSports Arena</h2>
+  <div class="stars" id="starRating">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+  <textarea id="feedbackText" placeholder="Write your feedback here..." rows="4"></textarea>
+  <button onclick="submitFeedback()">Submit Feedback</button>
+  <p id="feedbackMessage"></p>
+
+
+
+
+  <script>
+    let selectedRating = 0;
+
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function () {
+        selectedRating = this.getAttribute('data-value');
+        updateStars(selectedRating);
+    });
+});
+
+function updateStars(rating) {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+}
+
+function submitFeedback() {
+    const feedback = document.getElementById('feedbackText').value;
+    if (selectedRating === 0 || feedback.trim() === "") {
+        document.getElementById('feedbackMessage').style.color = "red";
+        document.getElementById('feedbackMessage').textContent = "Please give a rating and write feedback.";
+        return;
+    }
+
+    // You can later send this data to backend using fetch()
+    document.getElementById('feedbackMessage').style.color = "green";
+    document.getElementById('feedbackMessage').textContent = "Thank you for your feedback!";
+    
+    // Optionally clear form
+    document.getElementById('feedbackText').value = "";
+    selectedRating = 0;
+    updateStars(0);
+}
+
+  </script>
+</div>
+
+  <div class="contact-section" style="padding: 30px; background-color: #f0f0f0; margin-top: 30px;">
+    <h2 style="text-align: center; color: #333;">Contact Us</h2>
+    <form id="contactForm" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" id="contactName" placeholder="Your Name" required style="padding: 10px; font-size: 16px;">
+        <input type="email" id="contactEmail" placeholder="Your Email" required style="padding: 10px; font-size: 16px;">
+        <input type="tel" id="contactPhone" placeholder="Your Contact Number" required style="padding: 10px; font-size: 16px;">
+        <textarea id="contactMessage" placeholder="Your Message" rows="4" required style="padding: 10px; font-size: 16px;"></textarea>
+        <button type="button" onclick="submitContactForm()" style="padding: 10px; font-size: 18px; background-color: green; color: white; border: none; cursor: pointer;">Send Message</button>
+        <p id="contactFeedback" style="text-align: center;"></p>
+    </form>
+    <script>
+        function submitContactForm() {
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const phone = document.getElementById('contactPhone').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const feedback = document.getElementById('contactFeedback');
+
+    if (!name || !email || !phone || !message) {
+        feedback.style.color = "red";
+        feedback.textContent = "Please fill in all fields.";
+        return;
+    }
+    feedback.style.color = "green";
+    feedback.textContent = "Message Sent Successfully!";
+    // Clear the form (optional)
+    document.getElementById('contactForm').reset();
+}
+    </script>
+</div>
+
     <div class="cartTab">
         <h1>Shopping Cart</h1>
         <div class="listCart">
             <div class="item"><h2>ITEM</h2></div>
         </div>
+    
 <script>
     let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
     updateCartCount();
@@ -116,6 +239,9 @@
 
 
    </div>
+   <footer style="color: rgb(59, 4, 98); text-align: center; font-size: 40px; padding: 5px 0; margin-top: 15px;">
+        &copy; 2025 Sports Arena. All Rights Reserved.
+    </footer>
 </body>
 </html>
 
