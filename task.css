@@ -1,7 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 body{
     margin: 0;
     font-family: Poppins;
-    background-image: url("homepagebackground.jpeg");
+    background-image: url("homebackground.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -197,7 +202,7 @@ body.showCart .container{
 }
 a{
     text-decoration: none;
-    color:rgb(32, 32, 188);
+    color:whitesmoke;
     font-size: 30px; 
      
 }
@@ -252,4 +257,164 @@ a{
 
 .search-container button:hover {
     background-color: #ffcc00;
+}
+
+.about-section {
+    background-image: url('homepagebackground.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background-color: #ffffff;
+    }
+
+    .about-section img {
+      width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-right: 40px;
+    }
+
+    .about-text {
+      max-width: 500px;
+    }
+
+    .about-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #c3a228;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: #65856c;
+      line-height: 1.6;
+    }
+
+
+    .why-choose-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.why-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.why-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.why-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.why-image {
+    flex: 1;
+    padding: 20px;
+    text-align: right;
+}
+
+.why-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.rating-section {
+    text-align: center;
+    background-color: rgb(238, 244, 229);
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rating-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.stars {
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.stars .star.selected,
+.stars .star:hover,
+.stars .star:hover ~ .star {
+    color: gold;
+}
+
+textarea {
+    width: 90%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3e64ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2748d9;
+}
+
+#feedbackMessage {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
+.contact-section{
+     text-align: center;
+    background-color: rgb(238, 244, 229);
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-section button:hover {
+    background-color: darkgreen;
 }
