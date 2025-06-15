@@ -165,21 +165,37 @@
   </div>
 
   <script>
-    function togglePassword(fieldId, icon) {
-      const field = document.getElementById(fieldId);
-      if (field.type === "password") {
-        field.type = "text";
-        icon.textContent = "🙈";
-      } else {
-        field.type = "password";
-        icon.textContent = "👁️";
-      }
+   
+  function togglePassword(fieldId, icon) {
+    const field = document.getElementById(fieldId);
+    if (field.type === "password") {
+      field.type = "text";
+      icon.textContent = "🙈";
+    } else {
+      field.type = "password";
+      icon.textContent = "👁️";
     }
+  }
 
-    function handleSubmit(event) {
-      event.preventDefault(); // Prevent form from actually submitting
-      document.getElementById("message").style.display = "block";
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const messageDiv = document.getElementById("message");
+
+    if (password !== confirmPassword) {
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      messageDiv.textContent = "Passwords do not match!";
+    } else {
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "#00ff99";
+      messageDiv.textContent = "Account created successfully!";
     }
-  </script>
+  }
+</script>
+
+ 
 </body>
 </html>
