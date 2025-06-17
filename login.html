@@ -1,157 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elite Sports Login</title>
-  <link rel="icon" type="image/png" href="login_favicon.png">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-image: url("loginbackground.jpeg");
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f0f0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      background-color: #fff;
-      width: 400px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .logo-container {
-      background-color: #000;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .logo-container img {
-      width: 100%;
-      max-width: 220px;
-    }
-
-    .login-container {
-      padding: 30px;
-      background-color: #9797e0;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      color: #1d1d76;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    input[type="text"]:focus, input[type="password"]:focus {
-      outline: none;
-      border-color: #1d1d76;
-      box-shadow: 0 0 5px rgba(29, 29, 118, 0.3);
-    }
-
-    .password-wrapper {
-      position: relative;
-    }
-
-    .toggle-icon {
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 18px;
-      user-select: none;
-    }
-
-    .login-button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      color: yellow;
-      background-color: #1d1d76;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .login-button:hover {
-      background-color: #14145a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="sai3256.css">
 </head>
-
 <body>
-
-  <div class="container">
-    <div class="logo-container">
-      <img src="ellite sports logo.png" alt="Elite Sports Logo">
+    <div class="header">
+        <h1 align="center">STUDENT LOGIN PAGE</h1>
+        
+          <big>  <a href="sai3256.html">Login</a></big>
+         <big>   <a href="sai3256signup.html" target="blank">Signup</a></big>
+            <img src="saikoushik.jpg" alt="saiimage" height="60px" width="60px"></div>
+ <div class="login-box">       
+       <div class="login">
+        <h1 align="center">LOGIN</h1>
     </div>
-
-    <div class="login-container">
-      <form onsubmit="return LoginButton()">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="text" id="email" placeholder="Enter your email address" required>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Enter password" required>
-            <span class="toggle-icon" onclick="togglePassword()">👁️</span>
-          </div>
-        </div>
-
-      <a href="GTATASK.html"> <button class="login-button" type="submit">Login</button></a>
-      </form>
+    <div class="usrname">
+        <h2>Enter your username:
+            <input type="text" placeholder="username/email" required>
+        </h2>
     </div>
-  </div>
-
-  <script>
-    function togglePassword() {
-      const pass = document.getElementById("password");
-      pass.type = pass.type === "password" ? "text" : "password";
-    }
-
-    function LoginButton() {
-      const email = document.getElementById("email").value;
-      const pass = document.getElementById("password").value;
-
-      if (email && pass) {
-        alert("Login Successful!");
-        return false; // prevent form from actually submitting
-      } else {
-        alert("Please fill in both fields.");
-        return false;
-      }
-    }
-  </script>
-
+    <div class="password">
+        <h2>Enter your password:
+            <input type="password" placeholder="password" required>
+        </h2>
+    </div>
+    <div class="checkbox">
+        <label>
+            <h3>
+                <input type="checkbox">Stay signed in
+                <a href="" target="blank">forgot password?</a>
+            </h3>
+        </label>
+    </div>
+    <div class="account">
+        <h3>Don't have an account?<a href="" target="blank">signup</a></h3>
+    </div>
+    <div class="btn">
+        <button type="submit">Login</button>
+    </div></div>
 </body>
 </html>
