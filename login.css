@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/060/223/small/rocket-is-flying-in-galaxy-space-of-the-universe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.login-box {
+    color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(5, 5, 5);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+
+.account {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+input[type="text"], 
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h3 {
+    color: yellow;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    
+    align-items: center;
+    width: 100%;
+    margin-right:220px;
+    gap:100px;
+}
+
+
+
+.header img {
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.header img:hover{
+    cursor:pointer;
+    scale: 1.1;
+}
