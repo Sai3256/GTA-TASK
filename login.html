@@ -5,42 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN PAGE</title>
     <link rel="stylesheet" href="login.css">
-    <link rel="icon" type="image/jpeg" href="login_favicon.png">
+    <link rel="icon" type="image/png" href="login_favicon.png">
+    <style>
+        #userImage {
+            display: none; /* initially hidden */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <h1 align="center">PRO SPORTS LOGIN </h1>
-        
-          <big>  <a href="login.html">Login</a></big>
-         <big>   <a href="signup.html" target="blank">Signup</a></big>
-            <img src="saikoushik.jpg" alt="saiimage" height="60px" width="60px"></div>
- <div class="login-box">       
-       <div class="login">
-        <h1 align="center">LOGIN</h1>
+        <big><a href="login.html">Login</a></big>
+        <big><a href="signup.html" target="_blank">Signup</a></big>
+        <img src="saikoushik.jpg" id="userImage" alt="saiimage" height="60px" width="60px">
     </div>
-    <div class="usrname">
-        <h2>Enter your username:
-            <input type="text" placeholder="username/email" required>
-        </h2>
+
+    <div class="login-box">       
+        <div class="login">
+            <h1 align="center">LOGIN</h1>
+        </div>
+        <div class="usrname">
+            <h2>Enter your username:
+                <input type="text" id="username" placeholder="username/email" required>
+            </h2>
+        </div>
+        <div class="password">
+            <h2>Enter your password:
+                <input type="password" id="password" placeholder="password" required>
+            </h2>
+        </div>
+        <div class="checkbox">
+            <label>
+                <h3>
+                    <input type="checkbox">Stay signed in
+                    <a href="#" target="_blank">forgot password?</a>
+                </h3>
+            </label>
+        </div>
+        <div class="account">
+            <h3>Don't have an account? <a href="signup.html" target="_blank">signup</a></h3>
+        </div>
+        <div class="btn">
+            <button onclick="handleLogin()">Login</button>
+        </div>
     </div>
-    <div class="password">
-        <h2>Enter your password:
-            <input type="password" placeholder="password" required>
-        </h2>
-    </div>
-    <div class="checkbox">
-        <label>
-            <h3>
-                <input type="checkbox">Stay signed in
-                <a href="" target="blank">forgot password?</a>
-            </h3>
-        </label>
-    </div>
-    <div class="account">
-        <h3>Don't have an account?<a href="signup.html" target="blank">signup</a></h3>
-    </div>
-    <div class="btn">
-        <button type="submit">Login</button>
-    </div></div>
+
+    <script>
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // You can add real validation here if needed
+            if (username && password) {
+                document.getElementById('userImage').style.display = 'inline-block';
+                alert('Login Successful');
+                window.location.href = 'GTATASK.html';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        }
+    </script>
 </body>
 </html>
