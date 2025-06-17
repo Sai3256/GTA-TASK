@@ -80,3 +80,28 @@ h3 {
     cursor:pointer;
     scale: 1.1;
 }
+
+ 
+    #userImage {
+      display: none;
+    }
+
+    .eye-icon {
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #555;
+    }
+
+    .password-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .password-container input {
+      width: calc(100% - 40px);
+    }
