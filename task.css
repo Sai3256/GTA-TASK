@@ -420,10 +420,6 @@ button:hover {
     background-color: darkgreen;
 }
 
-
-
-
-
 .imagegen-container {
     background-color: #f2f6e9; /* pastel green like your feedback box */
     padding: 30px;
@@ -471,3 +467,4 @@ button:hover {
     border: 3px solid #ccc;
     margin-top: 15px;
 }
+
