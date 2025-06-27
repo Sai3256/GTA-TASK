@@ -415,6 +415,59 @@ button:hover {
     width: 100%;
 }
 
+
 .contact-section button:hover {
     background-color: darkgreen;
+}
+
+
+
+
+
+.imagegen-container {
+    background-color: #f2f6e9; /* pastel green like your feedback box */
+    padding: 30px;
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+}
+
+.imagegen-container h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.imagegen-input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.imagegen-btn {
+    background-color: #3366ff;
+    color: white;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.imagegen-btn:hover {
+    background-color: #1a53ff;
+}
+
+.generated-output img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    margin-top: 15px;
 }
