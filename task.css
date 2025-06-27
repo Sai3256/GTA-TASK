@@ -420,27 +420,28 @@ button:hover {
     background-color: darkgreen;
 }
 
-.imagegen-container {
-    background-color: #f2f6e9;
+/* AI Generator Box like feedback section */
+.ai-generator-box {
+    background-color: #ffffff;
     padding: 30px;
-    max-width: 550px;
+    max-width: 600px;
     margin: 60px auto;
     text-align: center;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    font-family: Arial, sans-serif;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
 }
 
-.imagegen-container h2 {
+.ai-generator-box h2 {
     font-size: 22px;
-    color: #444;
+    color: #333;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .imagegen-input {
     width: 90%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -461,10 +462,15 @@ button:hover {
     background-color: #1a53ff;
 }
 
+.generated-output {
+    margin-top: 20px;
+}
+
 .generated-output img {
     max-width: 100%;
     border-radius: 12px;
-    border: 3px solid #ccc;
-    margin-top: 20px;
+    border: 2px solid #ccc;
+    margin-top: 10px;
 }
+
 
