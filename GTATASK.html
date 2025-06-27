@@ -61,35 +61,48 @@
   <div id="generatedImageContainer" class="generated-output"></div>
 </div>
 <script>
-async function generateImage() {
-    const prompt = document.getElementById("imagePrompt").value;
-    const container = document.getElementById("generatedImageContainer");
-    container.innerHTML = "Generating image...";
+const form = document.getElementById('chat-form');
+const mytextInput = document.getElementById('mytext');
+const responseTextarea = document.getElementById('response');
 
-    try {
-        const response = await fetch("https://api.openai.com/v1/images/generations", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "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"
-            },
-            body: JSON.stringify({
-                prompt: prompt,
-                n: 1,
-                size: "512x512"
-            })
-        });
+const API_KEY = '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';
 
-        const data = await response.json();
-        if (data.data && data.data[0].url) {
-            container.innerHTML = `<img src="${data.data[0].url}" alt="Generated image">`;
-        } else {
-            container.innerHTML = "Could not generate image. Please try again.";
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const mytext = mytextInput.value.trim();
+
+    if (mytext) {
+        try {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`,
+                },
+                body: JSON.stringify({
+                    model: 'gpt-4',
+                    messages: [{ role: 'user', content: mytext }],
+                    temperature: 1.0,
+                    top_p: 0.7,
+                    n: 1,
+                    stream: false,
+                    presence_penalty: 0,
+                    frequency_penalty: 0,
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                responseTextarea.value = data.choices[0].message.content;
+            } else {
+                responseTextarea.value = 'Error: Unable to process your request.';
+            }
+        } catch (error) {
+            console.error(error);
+            responseTextarea.value = 'Error: Unable to process your request.';
         }
-    } catch (error) {
-        container.innerHTML = "Error: " + error.message;
     }
-}
+});
 </script>
 
 
