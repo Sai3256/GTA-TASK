@@ -21,10 +21,9 @@ svg{
 
 /* === Header Styling === */
 .main-header {
-  background-image: url('df691ea5-20e5-47cc-a014-59df63f14592.png'); /* Your uploaded header image */
-  background-size: cover;
-  background-position: center;
-  padding: 20px 40px;
+   /* Your uploaded header image */
+  background-color: #287893;
+  padding: 20px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
