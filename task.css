@@ -17,30 +17,77 @@ h2{
 svg{
     width: 30px;
 }
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
+
+
+/* === Header Styling === */
+.main-header {
+  background: #111;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-.icon-cart{
-    position: relative;
-    margin-top: 20px;
+
+.logo h1 {
+  margin: 0;
+  font-size: 32px;
+  color: yellow;
 }
-.icon-cart span{
-    margin-top: 0px;
-    position: absolute;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 50%;
-    right: -20px;
+
+.navbar {
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
+
+.navbar a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #333;
+  color: #ffd700;
+}
+
+/* Cart icon inside nav */
+.icon-cart {
+  position: relative;
+  margin-left: 20px;
+}
+
+.icon-cart svg {
+  width: 30px;
+  height: 30px;
+  stroke: white;
+}
+
+.icon-cart span {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
+
+
+
 .title{
     font-size: xx-large;
 }
