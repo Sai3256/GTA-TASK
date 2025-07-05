@@ -21,7 +21,9 @@ svg{
 
 /* === Header Styling === */
 .main-header {
-  background: #0e4a5b;
+  background-image: url('df691ea5-20e5-47cc-a014-59df63f14592.png'); /* Your uploaded header image */
+  background-size: cover;
+  background-position: center;
   padding: 20px 40px;
   position: sticky;
   top: 0;
@@ -78,7 +80,7 @@ svg{
 .icon-cart svg {
   width: 30px;
   height: 30px;
-  stroke: white;
+  stroke: yellow;
 }
 
 .icon-cart span {
