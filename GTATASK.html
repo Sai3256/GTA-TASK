@@ -6,17 +6,27 @@
     <title>SPORTS SHOP</title>
     <link rel="stylesheet" href="task.css">
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
-    <div class="heading">
-       <h1><center><font color="yellow">SPORTS SHOP</center></h1><div class="credinitials">
-        <a href="login.html" target="blank" id="get">login</a><a>               </a><a>               </a><a>               </a>
-        <a href="signup.html" target="blank" id="het">signup</a></div>
-         <a href="#contact">Contact</a> <div class="icon-cart">
-        
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
-            </svg>
-            <span id="cart-count">0</span>
-        </div></div>  
+     <header class="main-header">
+  <div class="logo">
+    <h1><span style="color: yellow;">SPORTS SHOP</span></h1>
+  </div>
+  <nav class="navbar">
+    <a href="login.html" target="_blank">Login</a>
+    <a href="signup.html" target="_blank">Signup</a>
+    <a href="#contact">Contact</a>
+    <a href="#starRating">Rate</a>
+    <a href="#about" class="nav-link">About Us</a>
+    <a href="#imagePrompt" class="nav-link">AI Image</a>
+    <div class="icon-cart">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
+      </svg>
+      <span id="cart-count">0</span>
+    </div>
+  </nav>
+</header>
+ 
         <div class="games"><a href="cricket.html" target="blank">Cricket Shop</a><a href="hockey.html" target="blank">Hockey Shop</a><a href="football.html" target="blank">FootBall Shop</a><a href="baseball.html" target="blank">Baseball Shop</a></div>
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search for sports items...">
@@ -55,7 +65,7 @@
         </div>
     </div>
     <p id="cart-message" style="display: none; color: green; text-align: center;"></p>
-<div class="ai-generator-box">
+<div class="ai-generator-box" id="imagePrompt">
   <h2>🎨 Describe Your Image & Let AI Generate It</h2>
   <input type="text" id="imagePrompt" placeholder="e.g. a futuristic cricket stadium..." class="imagegen-input">
   <br>
@@ -121,7 +131,7 @@ async function generateImage() {
     <div class="about-section">
     <img src="website_elite.jpg" alt="Sports Shop">
     
-    <div class="about-text">
+    <div class="about-text" id="about">
       <h2>Welcome to ProSports Arena</h2>
       <p>
         At ProSports Arena, we bring the world of sports closer to you. Whether you're a professional athlete, fitness enthusiast, or just love the game — we have everything you need. From cricket bats and footballs to athletic wear and training gear, our store offers premium quality products from top brands at unbeatable prices. <br><br>
@@ -129,7 +139,7 @@ async function generateImage() {
       </p>
     </div>
   </div>
-  <div class="rating-section">
+  <div class="rating-section" id="starRating">
   <h2>Rate Your Experience with ProSports Arena</h2>
   <div class="stars" id="starRating">
     <span class="star" data-value="1">&#9733;</span>
