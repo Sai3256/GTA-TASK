@@ -21,37 +21,47 @@ svg{
 
 /* === Header Styling === */
 .main-header {
-  background: #111;
+  background: #0e4a5b;
   padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.logo h1 {
-  margin: 0;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+}
+
+.logo h1 span {
   font-size: 32px;
   color: yellow;
 }
 
 .navbar {
   display: flex;
-  gap: 25px;
+  flex: 3;
+  justify-content: flex-end;
+  gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #f0f0f0;
+  color: white;
   font-size: 18px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .navbar a:hover {
@@ -59,7 +69,6 @@ svg{
   color: #ffd700;
 }
 
-/* Cart icon inside nav */
 .icon-cart {
   position: relative;
   margin-left: 20px;
@@ -73,8 +82,8 @@ svg{
 
 .icon-cart span {
   position: absolute;
-  top: -10px;
-  right: -15px;
+  bottom: -8px;
+  right: -10px;
   background-color: red;
   width: 20px;
   height: 20px;
@@ -85,9 +94,6 @@ svg{
   border-radius: 50%;
   color: #fff;
 }
-
-
-
 .title{
     font-size: xx-large;
 }
