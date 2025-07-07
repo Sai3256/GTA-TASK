@@ -1,4 +1,4 @@
-body {
+\body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
@@ -64,7 +64,7 @@ body {
 
 .browse h2 {
     font-size: 24px;
-    color: #FFD700;
+    color: red;
 }
 
 .search {
@@ -150,7 +150,7 @@ body {
 
 footer {
     background-color: #001F3F;
-    color: white;
+    color: blue;
     text-align: center;
     padding: 15px;
     font-size: 14px;
