@@ -529,13 +529,6 @@ button:hover {
     margin-top: 10px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@100..900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-}
 
 :root {
   --color-primary: #5C56E1;
@@ -560,15 +553,7 @@ body.dark-theme{
   background-image: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 35%), radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 35%), radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    min-height: 100vh;
-    color: var(--color-text);
-    background: linear-gradient(#E9E9FF,#C8C7FF);
-}
+
 
 .container{
     width: 900px;
