@@ -19,7 +19,7 @@ body {
 
 .heading h1 {
     font-size: 28px;
-    color: red;
+    color: #00FF00;
 }
 
 .credinitials a {
@@ -31,30 +31,26 @@ body {
 }
 
 .icon-cart {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  margin: 10px;
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.cart-icon {
-  width: 100%;
-  height: 100%;
-  color: yellow;
+.icon-cart svg {
+    width: 24px;
+    height: 24px;
+    color: yellow;
 }
 
-.cart-badge {
-  position: absolute;
-  bottom: -5px;
-  right: -5px;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1;
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
 }
 
 .browse {
@@ -64,7 +60,7 @@ body {
 
 .browse h2 {
     font-size: 24px;
-    color: red;
+    color: blue;
 }
 
 .search {
