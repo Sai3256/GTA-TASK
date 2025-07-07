@@ -74,50 +74,46 @@
       <center> <big> <p>&copy; 2024 Cricket Emporium. All rights reserved.</big></p></center>
       <script>
         // Initialize cart count from local storage or default to 0
-        let cartCount = localStorage.getItem('cartCount') || 0;
+       // Initialize cart count from local storage or default to 0
+let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+updateCartCount();
+
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+function saveCartCountToLocalStorage() {
+    localStorage.setItem('cartCount', cartCount);
+}
+
+function incrementCartCount() {
+    cartCount++;
+    updateCartCount();
+    saveCartCountToLocalStorage();
+}
+
+function decrementCartCount() {
+    if (cartCount > 0) {
+        cartCount--;
         updateCartCount();
-    
-        // Function to increment the cart count and update the UI
-        function incrementCartCount() {
-            cartCount++;
-            updateCartCount();
-            saveCartCountToLocalStorage();
-        }
-    
-        // Function to update the cart count in the UI
-        function updateCartCount() {
-            document.getElementById('cart-count').textContent = cartCount;
-        }
-    
-        // Function to save cart count to local storage
-        function saveCartCountToLocalStorage() {
-            localStorage.setItem('cartCount', cartCount);
-        }
-    
-        // Function to add product to cart
-        function addToCart() {
-            incrementCartCount();
-            console.log(cartCount);
-            // Increment cart count
-            // Additional logic for adding product to cart (if required)
-            alert("Added to cart successfully");
-        }
-        function removefromCart() {
-            decrementCartCount();
-            console.log(cartCount);
-        }
-             
-            function decrementCartCount() {
-           if (cartCount > 0) {
-            cartCount--;
-            updateCartCount();
-            saveCartCountToLocalStorage();
-            alert("Removed from cart!");
-        } else {
-            alert("Cart is Empty!");
-        }
-           
-        }
+        saveCartCountToLocalStorage();
+        alert("Removed from cart!");
+    } else {
+        alert("Cart is Empty!");
+    }
+}
+
+function addToCart() {
+    incrementCartCount();
+    console.log(cartCount);
+    alert("Added to cart successfully");
+}
+
+function removefromCart() {
+    decrementCartCount();
+    console.log(cartCount);
+}
+
     </script>
       
     
