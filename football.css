@@ -137,7 +137,7 @@ h1, h2 {
 
 #cart-count {
     position: absolute;
-    top: -8px;
+    top: 4px;
     right: -10px;
     background: red;
     color: white;
