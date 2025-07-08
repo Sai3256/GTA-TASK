@@ -23,7 +23,7 @@ svg{
 .main-header {
    /* Your uploaded header image */
   padding: 20px 20px;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 1000;
   box-shadow: none;
