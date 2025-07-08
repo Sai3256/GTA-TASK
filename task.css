@@ -477,4 +477,100 @@ button:hover {
 }
 
 /* AI Generator Box like feedback section */
+.image-generator-box {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 850px;
+  border-radius: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 0.8s ease-in;
+}
 
+.image-generator-box h2 {
+  font-size: 2.2rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.image-generator-box .subtitle {
+  font-size: 1rem;
+  color: #dcdcdc;
+  margin-bottom: 25px;
+}
+
+.ai-generator-input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.ai-generator-input input {
+  padding: 14px;
+  width: 60%;
+  min-width: 250px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.ai-generator-input button {
+  padding: 14px 20px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 10px;
+  color: #1f1c2c;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ai-generator-input button:hover {
+  background-color: #e6b800;
+}
+
+.result-box {
+  margin-top: 20px;
+}
+
+#generatedImage {
+  margin-top: 15px;
+  display: none;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transition: opacity 1s ease;
+}
+
+.loader {
+  border: 6px solid #ccc;
+  border-top: 6px solid #ffcc00;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+#imageStatus {
+  margin-top: 15px;
+  font-weight: 500;
+  color: #eee;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
