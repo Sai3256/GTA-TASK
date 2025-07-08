@@ -66,234 +66,76 @@
         </div>
     </div>
     <p id="cart-message" style="display: none; color: green; text-align: center;"></p>
+<div id="imagePrompt" class="image-generator-box">
+  <h2><i class="fa-solid fa-wand-magic-sparkles"></i> AI Image Generator</h2>
+  <p class="subtitle">Imagine it. Describe it. See it.</p>
 
+  <div class="ai-generator-input">
+    <input type="text" id="promptInput" placeholder="e.g. 'futuristic cricket stadium at night'" />
+    <button onclick="generateAIImage()"><i class="fa fa-magic"></i> Generate</button>
+  </div>
 
- <div class="ai-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo-wrapper">
-                <div class="logo">
-                   <i class="fa-solid fa-wand-magic-sparkles"></i>
+  <div id="imageResult" class="result-box">
+    <div id="loader" class="loader" style="display: none;"></div>
+    <p id="imageStatus"></p>
+    <img id="generatedImage" alt="Generated AI Image" />
+  </div>
+  <script>
+async function generateAIImage() {
+    const prompt = document.getElementById("promptInput").value.trim();
+    const img = document.getElementById("generatedImage");
+    const status = document.getElementById("imageStatus");
+    const loader = document.getElementById("loader");
 
-                   
-                </div>
-                <h1>AI Image Generator</h1>
-            </div>
-            <button class="theme-toggle">
-                <i class="fa-solid fa-moon"></i> 
-            </button>
-        </header>
-        <div class="main-content">
-            <form action="#" class="prompt-form">
-                <!--Prompt Container-->
-               <div class="prompt-container">
-                    <textarea class="prompt-input" placeholder="Describe Your image in detail" required autofocus></textarea>
-                     <button type="button" class="prompt-btn">
-                <i class="fa-solid fa-dice"></i> 
-            </button>
-               </div> 
-               <!-- Prompt Actions/Buttons -->
-               <div class="prompt-actions">
-                   <div class="select-wrapper">
-                     <select class="custom-select" id="model-select" required>
-                        <option value="" selected disabled>Select Model</option>
-                        <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
-                        <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
-                        <option value="stabilityai/stable-diffusion-x1-base-1.0">Stable Diffusion XL</option>
-                        <option value="runwayml/stable-diffusion-v1-5">Stable Diffusion v1.5</option>
-                        <option value="prompthero/openjourney">Openjourney</option>
-                       
+    img.style.display = "none";
+    status.textContent = "";
+    loader.style.display = "none";
 
-                     </select>
-                   </div>
-
-                    <div class="select-wrapper">
-                     <select class="custom-select" id="count-select" required>
-                        <option value="" selected disabled>Image Count</option>
-                        <option value="1">1 Image</option>
-                        <option value="2">2 Images</option>
-                        <option value="3">3 Images</option>
-                        <option value="4">4 Images</option>                        
-                     </select>
-                   </div>
-
-                         <div class="select-wrapper">
-                     <select class="custom-select" id="ratio-select" required>
-                        <option value="" selected disabled>Aspect Ratio</option>
-                        <option value="1/1">Square (1:1)</option>
-                        <option value="16/9">Landscape (16:9)</option>
-                        <option value="9/16">Portrait (9:16)</option>                                       
-                     </select>
-                   </div>
-
-               <button type="submit" class="generate-btn">
-                    <i class="fa-solid fa-wand-sparkles"></i>
-                    Generate
-               </button>
-               </div>
-<!-- Result Gallery Grid-->
-               <div class="gallery-grid">
-                
-                     
-
-               </div>
-            </form>
-        </div>
-     <script>
-    const themeToggle = document.querySelector(".theme-toggle");
-const promptForm =  document.querySelector(".prompt-form");
-const promptInput =  document.querySelector(".prompt-input");
-const promptBtn = document.querySelector(".prompt-btn");
-const generateBtn = document.querySelector(".generate-btn");
-const modelSelect = document.getElementById("model-select");
-const countSelect = document.getElementById("count-select");
-const ratioSelect =document.getElementById("ratio-select");
-const gridGallery = document.querySelector(".gallery-grid");
-const API_KEY = ""; //Hugging face API KEY
-
-const examplePrompts = [
-    "A magic forest with glowing plants and fairy homes among giant mushrooms",
-  "An old steampunk airship floating through golden clouds at sunset",
-  "A future Mars colony with glass domes and gardens against red mountains",
-  "A dragon sleeping on gold coins in a crystal cave",
-  "An underwater kingdom with merpeople and glowing coral buildings",
-  "A floating island with waterfalls pouring into clouds below",
-  "A witch's cottage in fall with magic herbs in the garden",
-  "A robot painting in a sunny studio with art supplies around it",
-  "A magical library with floating glowing books and spiral staircases",
-  "A Japanese shrine during cherry blossom season with lanterns and misty mountains",
-  "A cosmic beach with glowing sand and an aurora in the night sky",
-  "A medieval marketplace with colorful tents and street performers",
-  "A cyberpunk city with neon signs and flying cars at night",
-  "A peaceful bamboo forest with a hidden ancient temple",
-  "A giant turtle carrying a village on its back in the ocean"
-];
-// Set theme based on saved preference or system default
-(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const systemPreferDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const isDarkTheme = savedTheme === "dark" || (!savedTheme && systemPreferDark);
-    document.body.classList.toggle("dark-theme", isDarkTheme);
-})();
-// switch between light and dark themes
-const toggleTheme= () =>{
-    const isDarkTheme= document.body.classList.toggle("dark-theme");
-    localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
-    themeToggle.querySelector("i").className = isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon";
-};
-
-// calculate width/Height based on chosen ratio 
-const getImageDimensions = (aspectRatio, baseSize = 512) =>{
-    const [width, height] =aspectRatio.split("/").map(Number);
-    const scaleFactor = baseSize / Math.sqrt(width * height);
-
-    let calculatedWidth = Math.round(width*scaleFactor);
-    let calculatedHeight = Math.round(height*scaleFactor);
-
-    //Ensure dimensions are multiples of 16 (AI Model requirements)
-    calculatedWidth = Math.floor(calculatedWidth / 16)*16;
-    calculatedHeight = Math.floor(calculatedHeight / 16)*16;
-
-    return {width: calculatedWidth, height: calculatedHeight };
-};
-
-// Replace loading spinner with actual image
-const updateImageCard = (imgIndex, imgUrl) =>{
-    const imgCard= document.getElementById(`img-card-${imgIndex}`);
-    if(!imgCard) return;
-
-    imgCard.classList.remove("loading");
-    imgCard.innerHTML =   `<img src="${imgUrl}" class="result-img">
-                         <div class="img-overlay">
-                            <a href="${imgUrl}" class="img-download-btn" download="${Date.now()}.png">
-                                <i class="fa-solid fa-download"></i>
-                            </a>
-                         </div>`;
-};
-// Send requests to Hugging Faces API To create images 
-const generateImages = async (selectedModel, imageCount, aspectRatio, promptText) => {
-    const MODEL_URL = `https://api-inference.huggingface.co/models/${selectedModel}`;
-
-     const {width, height} = getImageDimensions(aspectRatio);
-     generateBtn.setAttribute("disabled", "true");
-    
-     //Create an array of image generation promises
-     const imagePromises = Array.from({length: imageCount}, async(_, i) =>{  
-     try{
-        const response = await fetch(MODEL_URL, {
-            method: "POST",
-            headers: {
-				Authorization: `Bearer ${API_KEY}`,
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-                inputs: promptText,
-                parameters: {width, height},
-                options: {wait_for_model: true},
-            }),
-        });
-
-        if(!response.ok) {throw new Error((await response.json())?.error);}
-
-        // Convert response to an image URL and update the image card
-        const result = await response.blob();
-        updateImageCard(i, URL.createObjectURL(result));
-     } catch (error){
-           console.log(error);
-           const imgCard = document.getElementById(`img-card-${i}`);
-           imgCard.classList.replace("loading","error");
-           imgCard.querySelector(".status-text").textContent = "Generation failed! Check console for more details.";
-     }
-     });
-
-     await Promise.allSettled(imagePromises);
-     generateBtn.removeAttribute("disabled");
-};
-
-//Create placeholder cards with loading spinners
-const createImageCards = (selectedModel, imageCount, aspectRatio, promptText) =>{
-    gridGallery.innerHTML = "";
-
-    for(let i=0;i<imageCount; i++){
-        gridGallery.innerHTML +=  `<div class="img-card loading" id="img-card-${i}" style="aspect-ratio: ${aspectRatio}">
-                        <div class="status-container">
-                            <div class="spinner"></div>
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                                <p class="status-text">
-                                 Generating...   
-                                </p>                           
-                        </div>                     
-                      </div>`;
+    if (!prompt) {
+        status.style.color = "red";
+        status.textContent = "⚠️ Please enter a prompt to generate an image.";
+        return;
     }
 
-    generateImages(selectedModel, imageCount, aspectRatio, promptText);
-};
+    loader.style.display = "block";
+    status.style.color = "#ccc";
+    status.textContent = "🧠 Generating image... please wait.";
 
-//Handle form submission
-const handleFormSubmit = (e) => {
-    e.preventDefault();
-      // Get form values
-    const selectedModel = modelSelect.value;
-    const imageCount = parseInt(countSelect.value) || 1;
-    const aspectRatio = ratioSelect.value || "1/1";
-    const promptText = promptInput.value.trim();
+    try {
+        const response = await fetch("https://api.openai.com/v1/images/generations", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer YOUR_API_KEY_HERE"
+            },
+            body: JSON.stringify({
+                prompt: prompt,
+                n: 1,
+                size: "512x512"
+            })
+        });
 
-    createImageCards(selectedModel, imageCount, aspectRatio, promptText);
+        const data = await response.json();
+        loader.style.display = "none";
+
+        if (data.data && data.data.length > 0) {
+            img.src = data.data[0].url;
+            img.style.display = "block";
+            img.style.opacity = 0;
+            setTimeout(() => img.style.opacity = 1, 100);
+            status.textContent = "✅ Image generated successfully!";
+        } else {
+            throw new Error("No image returned.");
+        }
+    } catch (error) {
+        console.error(error);
+        status.style.color = "red";
+        status.textContent = "❌ Failed to generate image. Please try again.";
+        loader.style.display = "none";
+    }
 }
-// Fill prompt input with random examples
-promptBtn.addEventListener("click", ()=> {
-    const prompt= examplePrompts[Math.floor(Math.random() * examplePrompts.length)];
-    promptInput.value = prompt;
-    promptInput.focus();
-});
-
-promptForm.addEventListener("submit", handleFormSubmit);
-themeToggle.addEventListener("click", toggleTheme);
-     </script>
+</script>
 </div>
-
-
     <div class="why-choose-us">
   <div class="why-text">
     <h2>Why Should You Choose Sports Arena?</h2>
