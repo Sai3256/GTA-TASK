@@ -5,11 +5,11 @@ html {
 
 body{
     margin: 0;
+    margin-top: 80px;
     font-family: Poppins;
     background-color: #246f7e;
     background-repeat: no-repeat;
-    background-size: cover;
-  
+    background-size: cover;  
 }
 h2{
     color:yellow;
@@ -20,15 +20,21 @@ svg{
 
 
 /* === Header Styling === */
+/* === Header Styling === */
 .main-header {
-   /* Your uploaded header image */
+  background-color: #246f7e; /* Matching bottom blue color */
   padding: 20px 20px;
-  position: relative;
+  position: fixed; /* Keeps it fixed at the top */
   top: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: none;
   border-bottom: none;
+  transition: top 0.3s ease; /* Smooth transition for when header moves */
 }
+
+
+
 
 .header-container {
   display: flex;
