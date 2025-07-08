@@ -24,7 +24,7 @@ svg{
 .main-header {
   background-color: #246f7e; /* Matching bottom blue color */
   padding: 20px 20px;
-  position: fixed; /* Keeps it fixed at the top */
+  /* Keeps it fixed at the top */
   top: 0;
   width: 100%;
   z-index: 1000;
