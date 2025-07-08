@@ -81,7 +81,9 @@
     <img id="generatedImage" alt="Generated AI Image" />
   </div>
   <script>
-async function generateAIImage() {
+
+
+    async function generateAIImage() {
     const prompt = document.getElementById("promptInput").value.trim();
     const img = document.getElementById("generatedImage");
     const status = document.getElementById("imageStatus");
@@ -106,7 +108,7 @@ async function generateAIImage() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer YOUR_API_KEY_HERE"
+                "Authorization": "Bearer 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" 
             },
             body: JSON.stringify({
                 prompt: prompt,
@@ -134,6 +136,7 @@ async function generateAIImage() {
         loader.style.display = "none";
     }
 }
+ 
 </script>
 </div>
     <div class="why-choose-us">
