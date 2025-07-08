@@ -89,7 +89,7 @@ svg{
 }
 
 .icon-cart span {
-  position: absolute;
+  position: relative;
   bottom: -8px;
   right: -10px;
   background-color: red;
