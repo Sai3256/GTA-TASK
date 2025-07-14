@@ -24,7 +24,7 @@ svg{
 .main-header {
   background-color: #246f7e;
   padding: 15px 30px;
-  position: fixed;
+  position: relative;
   height: 80px;
   top: 0;
   width: 100%;
