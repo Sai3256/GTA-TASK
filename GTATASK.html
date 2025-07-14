@@ -7,16 +7,12 @@
     <link rel="stylesheet" href="task.css">
     <link rel="icon" type="image/jpeg" href="favicon.jpeg"> </head>
 <body>
-<div class="main-header">
+   <div class="main-header">
   <div class="header-container">
-    <div class="hamburger" onclick="toggleGamesMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <div class="logo">
       <h1><span>SPORTS SHOP</span></h1>
     </div>
+
     <nav class="navbar">
       <a href="login.html" target="_blank">Login</a>
       <a href="signup.html" target="_blank">Signup</a>
@@ -25,35 +21,15 @@
       <a href="#about">About Us</a>
       <a href="#imagePrompt">AI Image</a>
     </nav>
+
     <div class="icon-cart">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
       </svg>
       <span id="cart-count">0</span>
     </div>
   </div>
-  <div class="games" id="gamesMenu">
-    <a href="cricket.html" target="_blank">Cricket Shop</a>
-    <a href="hockey.html" target="_blank">Hockey Shop</a>
-    <a href="football.html" target="_blank">Football Shop</a>
-    <a href="baseball.html" target="_blank">Baseball Shop</a>
-  </div>
-</div>
-
-<script>
-  function toggleGamesMenu() {
-    const menu = document.getElementById("gamesMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  }
-
-  let lastScrollTop = 0;
-  window.onscroll = function () {
-    const header = document.querySelector('.main-header');
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    header.style.top = currentScroll > lastScrollTop ? "-80px" : "0";
-    lastScrollTop = Math.max(currentScroll, 0);
-  }
-</script>
 </div>
  
         <div class="games"><a href="cricket.html" target="blank">Cricket Shop</a><a href="hockey.html" target="blank">Hockey Shop</a><a href="football.html" target="blank">FootBall Shop</a><a href="baseball.html" target="blank">Baseball Shop</a></div>
@@ -90,6 +66,7 @@
         </div>
     </div>
     <p id="cart-message" style="display: none; color: green; text-align: center;"></p>
+    
 <div id="imagePrompt" class="image-generator-box">
   <h2><i class="fa-solid fa-wand-magic-sparkles"></i> AI Image Generator</h2>
   <p class="subtitle">Imagine it. Describe it. See it.</p>
@@ -105,9 +82,7 @@
     <img id="generatedImage" alt="Generated AI Image" />
   </div>
   <script>
-
-
-    async function generateAIImage() {
+async function generateAIImage() {
     const prompt = document.getElementById("promptInput").value.trim();
     const img = document.getElementById("generatedImage");
     const status = document.getElementById("imageStatus");
@@ -132,7 +107,7 @@
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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" 
+                "Authorization": "Bearer YOUR_API_KEY_HERE"
             },
             body: JSON.stringify({
                 prompt: prompt,
@@ -160,9 +135,12 @@
         loader.style.display = "none";
     }
 }
- 
 </script>
 </div>
+
+
+ 
+
     <div class="why-choose-us">
   <div class="why-text">
     <h2>Why Should You Choose Sports Arena?</h2>
@@ -353,5 +331,4 @@ function submitFeedback() {
     </footer>
 </body>
 </html>
-
 
