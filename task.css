@@ -24,7 +24,7 @@ svg{
    /* Your uploaded header image */
   background-color: #297C89;
   padding: 20px 20px;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   box-shadow: none;
