@@ -22,19 +22,14 @@ svg{
 /* === Header Styling === */
 /* === Header Styling === */
 .main-header {
-  background-color: #246f7e; /* Matching bottom blue color */
-  padding: 20px 20px;
-  /* Keeps it fixed at the top */
+  background-color: #246f7e;
+  padding: 15px 30px;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: none;
-  border-bottom: none;
-  transition: top 0.3s ease; /* Smooth transition for when header moves */
+  transition: top 0.3s ease;
 }
-
-
-
 
 .header-container {
   display: flex;
@@ -43,32 +38,26 @@ svg{
   flex-wrap: wrap;
 }
 
-.logo {
-  flex: 1;
-  text-align: center;
-}
-
 .logo h1 span {
-  font-size: 32px;
+  font-size: 28px;
   color: yellow;
+  font-weight: bold;
 }
 
+/* NavBar Styling */
 .navbar {
   display: flex;
-  flex: 3;
-  justify-content: flex-end;
   gap: 20px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .navbar a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   padding: 6px 10px;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
@@ -76,32 +65,34 @@ svg{
   color: #ffd700;
 }
 
+/* Cart Icon */
 .icon-cart {
   position: relative;
-  color: yellow;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .icon-cart svg {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   stroke: yellow;
 }
 
 .icon-cart span {
-  position: relative;
+  position: absolute;
   bottom: -8px;
-  right: -10px;
+  left: 16px;
   background-color: red;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   color: #fff;
 }
+
 .title{
     font-size: xx-large;
 }
