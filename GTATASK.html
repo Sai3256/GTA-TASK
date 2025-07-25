@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width", initial-scale=1.0".>
     <title>SPORTS SHOP</title>
     <link rel="stylesheet" href="task.css">
-    <link rel="icon" type="image/jpeg" href="favicon.jpeg"> </head>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 <body>
    <div class="main-header">
   <div class="header-container">
@@ -81,7 +83,8 @@
     <p id="imageStatus"></p>
     <img id="generatedImage" alt="Generated AI Image" />
   </div>
-  <script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
 async function generateAIImage() {
     const prompt = document.getElementById("promptInput").value.trim();
     const img = document.getElementById("generatedImage");
@@ -103,31 +106,24 @@ async function generateAIImage() {
     status.textContent = "🧠 Generating image... please wait.";
 
     try {
-        const response = await fetch("https://api.openai.com/v1/images/generations", {
+        const response = await fetch("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer YOUR_API_KEY_HERE"
+                "Authorization": "Bearer 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",  
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                prompt: prompt,
-                n: 1,
-                size: "512x512"
-            })
+            body: JSON.stringify({ inputs: prompt })
         });
 
-        const data = await response.json();
-        loader.style.display = "none";
+        if (!response.ok) throw new Error("API request failed");
 
-        if (data.data && data.data.length > 0) {
-            img.src = data.data[0].url;
-            img.style.display = "block";
-            img.style.opacity = 0;
-            setTimeout(() => img.style.opacity = 1, 100);
-            status.textContent = "✅ Image generated successfully!";
-        } else {
-            throw new Error("No image returned.");
-        }
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        img.src = imageUrl;
+        img.style.display = "block";
+        img.style.opacity = 0;
+        setTimeout(() => img.style.opacity = 1, 100);
+        status.textContent = "✅ Image generated successfully!";
     } catch (error) {
         console.error(error);
         status.style.color = "red";
@@ -136,6 +132,7 @@ async function generateAIImage() {
     }
 }
 </script>
+
 </div>
 
 
