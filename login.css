@@ -60,26 +60,8 @@ h3 {
     color: yellow;
 }
 
-.header {
-    display: flex;
-    justify-content: end;
-    
-    align-items: center;
-    width: 100%;
-    margin-right:220px;
-    gap:100px;
-}
 
 
-
-.header img {
-    border-radius: 50%;
-    margin-left: 10px;
-}
-.header img:hover{
-    cursor:pointer;
-    scale: 1.1;
-}
 
  
     #userImage {
