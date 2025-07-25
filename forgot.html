@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forgot Password</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      margin-top: 15px;
+      color: green;
+      font-size: 14px;
+      display: none;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <p>Enter your email to receive a password reset link.</p>
+    <form id="forgotForm">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <button type="submit">Send Reset Link</button>
+    </form>
+    <p id="responseMsg" class="message">Reset Link sent to your registered email successfully.</p>
+    <a href="login.html" class="back-link">Back to Login</a>
+  </div>
+
+  <script>
+    const form = document.getElementById("forgotForm");
+    const responseMsg = document.getElementById("responseMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+
+      // Simulate sending request
+      console.log("Reset link sent to:", email);
+      responseMsg.style.display = "block";
+
+      // Reset form
+      form.reset();
+    });
+  </script>
+</body>
+</html>
