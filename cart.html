@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="icon" href="cart.png">
+</head>
+<body>
+  <div class="cart-container">
+    <h1>🛒 Your Cart - Sports Shop</h1>
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal:</span> ₹<span id="subtotal">0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (18%):</span> ₹<span id="tax">0.00</span>
+      </div>
+      <div class="summary-row total">
+        <strong>Total:</strong> ₹<strong id="total">0.00</strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <script src="cart.js"></script>
+</body>
+</html>
